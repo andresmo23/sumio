@@ -24,7 +24,7 @@ Sumio es una aplicación web para **gestionar tus gastos personales** de forma c
 
 ## 🖥️ Demo
 
-> *(O si ya está en GitHub Pages, pon el link: https://tuusuario.github.io/sumio/)*
+👉 [Probar Sumio en GitHub Pages](https://andresmo23.github.io/sumio/)
 
 ---
 
