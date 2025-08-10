@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Modo claro */
+  --color-bg-light: #f4f8ff;
+  --color-text-light: #1e1e1e;
+  --color-primary-light: #3f72af;
+  --color-secondary-light: #dbe2ef;
+  --color-accent-light: #112d4e;
+  --color-success-light: #4caf50;
+  --color-warning-light: #ff9800;
+  --color-danger-light: #f44336;
+  --color-nth-light: #c6caff7c;
+  --color-nth-light-odd: #cecbff;
+  --color-btn-hover-1: #04c70b;
+  --color-btn-hover-2: #033e81;
+  --color-btn-hover-3: #fd1201;
+  --color-btn-hover-4: #eee12c;
+}
+
+[data-theme="dark"] {
+  /* Modo oscuro */
+  --color-bg-light: #1e1e2f;
+  --color-text-light: #f1f1f1;
+  --color-primary-light: #6c8eff;
+  --color-secondary-light: #030303b0;
+  --color-accent-light: #90caf9;
+  --color-success-light: #81c784;
+  --color-warning-light: #ffb74d;
+  --color-danger-light: #ef5350;
+  --color-nth-light: #191625;
+  --color-nth-light-odd: #5c5c5fce;
+  --color-btn-hover-1: #04c70b;
+  --color-btn-hover-2: #033e81;
+  --color-btn-hover-3: #fd1201;
+  --color-btn-hover-4: #ffee00;
+}
+
+/* Para Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+  appearance: textfield; /* estándar moderno */
+  -moz-appearance: textfield; /* compatibilidad con Firefox */
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-bg-light);
+  line-height: 1.6;
+  color: var(--color-text-light);
+  animation: fadeIn 1.2s ease-out;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: var(--color-accent-light);
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--color-text-light);
+}
+
+.sumio__btn {
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.8rem 0.5rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-bg-light);
+}
+
+/******************************** estlilos para el header ********************************/
+.sumio__header {
+  width: 100%;
+}
+
+.sumio__navbar {
+  width: 100%;
+  background-color: var(--color-secondary-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.8rem 0;
+}
+
+.content__logo {
+  height: 80px;
+  width: 200px;
+}
+
+.content__logo img {
+  height: 100%;
+  margin: 0 auto;
+}
+
+.navbar__content--items {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.navbar__item a {
+  display: inline-block;
+  width: 130px;
+  text-align: center;
+  border-radius: 4px;
+  padding: 0.2rem;
+  color: var(--color-accent-light);
+  background-color: var(--color-bg-light);
+  transition: background 0.3s ease, color 0.3s ease;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.navbar__item a:hover {
+  background-color: var(--color-accent-light);
+  color: var(--color-bg-light);
+}
+/******************************** estlilos para el main ********************************/
+.sumio__main {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.sumio__paragraphs {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.btn--change {
+  background-color: var(--color-text-light);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn--change:hover {
+  background-color: var(--color-accent-light);
+  transform: translateY(-5px);
+}
+
+.sumio__section {
+  border-radius: 10px;
+  background-color: var(--color-bg-light);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.53);
+  padding: 15px;
+}
+
+/********** estlilos seccion: crear **********/
+.sumio__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.form__input,
+.form__input--edit {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-secondary-light);
+}
+
+.container-btn-add {
+  width: 50%;
+}
+
+.btn--create {
+  width: 100%;
+  background-color: var(--color-success-light);
+  transition: background 0.2s ease, transform 0.3s ease;
+}
+
+.btn--create:hover {
+  background-color: var(--color-btn-hover-1);
+  transform: translateY(-8px);
+}
+
+/********** estlilos seccion: resumen **********/
+.section--summary h2 {
+  margin-bottom: 10px;
+}
+
+/********** estlilos seccion: filtro **********/
+.container-filters {
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+  min-width: 200px;
+}
+
+.btn__aplly-filter {
+  width: 50%;
+  background-color: var(--color-accent-light);
+  transition: background 0.2s ease, transform 0.3s ease;
+}
+
+.btn__aplly-filter:hover {
+  background-color: var(--color-btn-hover-2);
+  transform: translateY(-8px);
+}
+/********** estlilos seccion: muestra gastos **********/
+.btn--clear {
+  background-color: var(--color-danger-light);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn--clear:hover {
+  background-color: var(--color-btn-hover-3);
+  transform: translateY(-5px);
+}
+
+.section--expenses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.sumio__card {
+  background-color: var(--color-nth-light);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.sumio__card:nth-child(odd) {
+  background-color: transparent;
+  border: 1px solid var(--color-nth-light-odd);
+}
+
+.card__list--items {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card__item-label {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.sumio__btn--actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn--delete {
+  background-color: var(--color-danger-light);
+  transition: background 0.3s ease, transform 0.3s ease;
+  width: 40px;
+}
+
+.btn--delete:hover {
+  background-color: var(--color-btn-hover-3);
+  transform: translateY(-5px);
+}
+
+.btn--edit {
+  background-color: var(--color-primary-light);
+  transition: background 0.3s ease, transform 0.3s ease;
+  width: 40px;
+}
+
+.btn--edit:hover {
+  background-color: var(--color-accent-light);
+  transform: translateY(-5px);
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/sumio-icon.svg" />
+    <title>Sumio</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+  </head>
+  <body>
+    <header class="sumio__header">
+      <nav class="sumio__navbar">
+        <div class="content__logo">
+          <img src="./assets/sumio-logo.svg" alt="Logo de sumio" height="60" />
+        </div>
+
+        <ul class="navbar__content--items">
+          <li class="navbar__item"><a href="#section--form">Agregar Gasto</a></li>
+          <li class="navbar__item"><a href="#section--summary">Resumen Gastos</a></li>
+          <li class="navbar__item"><a href="#section--filter">Filtrar Gastos</a></li>
+          <li class="navbar__item"><a href="#section--expenses">Gastos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="sumio__main">
+      <div class="sumio__paragraphs">
+        <p>Tú gestor de gastos personal</p>
+        <button id="theme-toggle" class="sumio__btn btn--change" aria-label="Cambiar tema">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+
+      <!-- Seccion Crear Gastos -->
+      <section id="section--form" class="sumio__section section--form">
+        <h2>Crear Nuevo Gasto</h2>
+
+        <form class="sumio__form">
+          <div class="form__gruop" id="description-f">
+            <input
+              type="text"
+              class="form__input"
+              id="form__description"
+              placeholder="Descripción del gasto"
+            />
+            <p class="error__message" id="error__description"></p>
+          </div>
+
+          <div class="form__gruop" id="amount-f">
+            <input type="number" class="form__input" id="form__amount" placeholder="Monto" />
+            <p class="error__message" id="error__amount"></p>
+          </div>
+
+          <div class="form__gruop" id="category-f">
+            <select class="form__input" id="form__category">
+              <option disabled selected>Categoria</option>
+              <option value="ropa">Ropa</option>
+              <option value="salud">Salud</option>
+              <option value="viajes">Viaje</option>
+              <option value="ahorro">Ahorro</option>
+              <option value="alimento">Alimento</option>
+              <option value="educacion">Educación</option>
+              <option value="transporte">Trasnporte</option>
+              <option value="entretenimiento">Entretenimiento</option>
+            </select>
+            <p class="error__message" id="error__category"></p>
+          </div>
+
+          <div class="form__gruop" id="type-f">
+            <select class="form__input" id="form__type">
+              <option disabled selected>Extra o Necesario</option>
+              <option value="extra">Extra</option>
+              <option value="necesario">Necesario</option>
+            </select>
+            <p class="error__message" id="error__type"></p>
+          </div>
+
+          <div class="container-btn-add">
+            <button type="submit" class="sumio__btn btn--create">Crear</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Seccion Resumen de Gastos -->
+      <section id="section--summary" class="sumio__section section--summary">
+        <h2>Total de Gastos</h2>
+        <p>Total: <span class="summary-expense"></span></p>
+      </section>
+
+      <!-- Seccion Filtrar -->
+      <section id="section--filter" class="sumio__section section--filter">
+        <h2>Filtrar por Categoria o Fecha</h2>
+
+        <div class="container-filters">
+          <select id="filter--select" class="form__input">
+            <option value="todas">Todas</option>
+            <option value="ropa">Ropa</option>
+            <option value="salud">Salud</option>
+            <option value="viajes">Viaje</option>
+            <option value="ahorro">Ahorro</option>
+            <option value="alimento">Alimento</option>
+            <option value="educacion">Educación</option>
+            <option value="transporte">Trasnporte</option>
+            <option value="entretenimiento">Entretenimiento</option>
+          </select>
+          <input type="date" id="filter--date" class="form__input" />
+        </div>
+        <button class="sumio__btn btn__aplly-filter">Aplicar Filtro</button>
+      </section>
+
+      <!-- Seccion Mostrar Gastos -->
+      <section id="section--expenses" class="sumio__section section__expenses-cn">
+        <h2>Gastos</h2>
+        <div class="sumio__paragraphs">
+          <span>Limpiar historial de gastos</span>
+          <button class="sumio__btn btn--clear">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+        <!-- Este contenedor será llenado dinámicamente -->
+        <div class="section--expenses"></div>
+      </section>
+    </main>
+
+    <!-- Modal de edición -->
+    <div class="modal hiden" id="edit__modal">
+      <div class="modal__content">
+        <h2>Editar Gasto</h2>
+
+        <form class="sumio__form">
+          <div class="form__gruop" id="description-e">
+            <input
+              type="text"
+              id="edit__description"
+              class="form__input--edit"
+              placeholder="Descripción"
+            />
+            <p class="error__message" id="error__description--edit"></p>
+          </div>
+
+          <div class="form__gruop" id="amount-e">
+            <input type="number" id="edit__amount" class="form__input--edit" placeholder="Monto" />
+            <p class="error__message" id="error__amount--edit"></p>
+          </div>
+
+          <div class="form__gruop" id="category-e">
+            <select id="edit__category" class="form__input--edit">
+              <option disabled selected>Categoria</option>
+              <option value="ropa">Ropa</option>
+              <option value="salud">Salud</option>
+              <option value="viajes">Viaje</option>
+              <option value="ahorro">Ahorro</option>
+              <option value="alimento">Alimento</option>
+              <option value="educacion">Educación</option>
+              <option value="transporte">Trasnporte</option>
+              <option value="entretenimiento">Entretenimiento</option>
+            </select>
+            <p class="error__message" id="error__category--edit"></p>
+          </div>
+
+          <div class="form__gruop" id="type-e">
+            <select id="edit__type" class="form__input--edit">
+              <option disabled selected>Extra o Necesario</option>
+              <option value="extra">Extra</option>
+              <option value="necesario">Necesario</option>
+            </select>
+            <p class="error__message" id="error__type--edit"></p>
+          </div>
+
+          <div class="container-btn-modal">
+            <button type="submit" class="sumio__btn modal__btn--edit">Guardar Cambios</button>
+            <button class="sumio__btn modal__btn--cancelar">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>
