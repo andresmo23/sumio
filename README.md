@@ -24,6 +24,7 @@ Sumio es una aplicación web para **gestionar tus gastos personales** de forma c
 
 ## 🖥️ Demo
 
+![Sumio en acción](./assets/screenshot-sumio.PNG)
 👉 [Probar Sumio en GitHub Pages](https://andresmo23.github.io/sumio/)
 
 ---
@@ -66,6 +67,48 @@ Sumio es una aplicación web para **gestionar tus gastos personales** de forma c
 - Evita duplicación (DRY)
 - Accesibilidad: aria-label, data-name en botones
 - Precisión en fechas: filtrado local sin desfases de zona horaria
+
+---
+
+## 🛠️ Instalación
+
+```bash
+# Clona el repositorio
+git clone https://github.com/andresmo23/sumio.git
+
+# Entra al directorio
+cd sumio
+
+# Abre el archivo index.html en tu navegador
+```
+
+---
+
+## 📈 Roadmap
+
+- [ ] Agregar exportación de gastos a CSV
+- [ ] Implementar gráficos con Chart.js
+- [ ] Añadir autenticación para múltiples usuarios
+
+---
+
+## 🤝 Contribuciones
+
+Este proyecto está abierto a mejoras. Si deseas contribuir:
+
+1. Haz un fork
+2. Crea una rama (`git checkout -b feature/nueva-funcionalidad`)
+3. Haz tus cambios
+4. Abre un Pull Request
+
+Por favor sigue el estilo modular y documenta tus funciones.
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT. Puedes usarlo libremente con atribución.
+
 
 ---
 
