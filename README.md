@@ -25,7 +25,19 @@ Sumio es una aplicación web para **gestionar tus gastos personales** de forma c
 ## 🖥️ Demo
 
 ![Sumio en acción](./assets/screenshot-sumio.PNG)
-👉 [Probar Sumio en GitHub Pages](https://andresmo23.github.io/sumio/)
+
+
+---
+
+## 🌐 Despliegue
+
+Este proyecto está disponible públicamente en las siguientes plataformas:
+
+- 🔗 [Versión en Netlify](https://summio-app.netlify.app/)
+- 🔗 [Versión en Vercel](https://sumio.vercel.app/)
+
+Ambas versiones se actualizan automáticamente con cada cambio en la rama `main` del repositorio.
+
 
 ---
 

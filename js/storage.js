@@ -1,3 +1,4 @@
+import { updateIcon } from "./utils.js";
 // ? Guardar, obtener y limpiar datos desde localStorage
 
 // funcion para guardar en el localstorage
