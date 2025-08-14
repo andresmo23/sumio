@@ -12,7 +12,6 @@ import {
   filterExpensesByCategory,
   filterExpensesByDate,
   toggleTheme,
-  updateIcon,
 } from "./utils.js";
 import {
   renderExpenses,

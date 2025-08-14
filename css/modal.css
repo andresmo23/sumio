@@ -172,4 +172,13 @@
   .container-btn-modal {
     grid-column: 2 / 3;
   }
+
+  footer {
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
 }
